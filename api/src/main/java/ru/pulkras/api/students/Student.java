@@ -13,6 +13,9 @@ public class Student {
 
     private String name;
 
+    @Column(unique = true)
+    private String email;
+
     private LocalDate date;
 
 
@@ -20,8 +23,9 @@ public class Student {
 
     }
 
-    public Student(String name, LocalDate date) {
+    public Student(String name, String email, LocalDate date) {
         this.name = name;
+        this.email = email;
         this.date = date;
     }
 
@@ -37,11 +41,25 @@ public class Student {
         return date;
     }
 
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
                 ", date=" + date +
                 '}';
     }

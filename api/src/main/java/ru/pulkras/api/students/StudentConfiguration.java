@@ -15,8 +15,8 @@ public class StudentConfiguration {
     public CommandLineRunner commandLineRunner(StudentRepository studentRepository) {
         return args -> {
             studentRepository.saveAll(List.of(
-                    new Student("Alex", LocalDate.of(1996, Month.JANUARY, 1)),
-                    new Student("Misha", LocalDate.of(2000, Month.DECEMBER, 19))
+                    new Student("Alex", "alex@gmail.com", LocalDate.of(1996, Month.JANUARY, 1)),
+                    new Student("Misha", "misha1912@gmail.com", LocalDate.of(2000, Month.DECEMBER, 19))
             ));
         };
     }

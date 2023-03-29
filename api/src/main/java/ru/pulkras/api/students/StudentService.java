@@ -1,6 +1,7 @@
 package ru.pulkras.api.students;
 
 import org.springframework.stereotype.Service;
+import ru.pulkras.api.response.RestApiException;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -21,6 +22,17 @@ public class StudentService {
 
 
     public void add(Student student) {
+        if(studentRepository.findStudentByEmail(student.getEmail()).isPresent()) {
+            throw new RestApiException("email is busy");
+        }
+        studentRepository.save(student);
+    }
+
+    public void delete(Long studentId) {
+        studentRepository.deleteById(studentId);
+    }
+
+    public void update(Student student) {
         studentRepository.save(student);
     }
 }

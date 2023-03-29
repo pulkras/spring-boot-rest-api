@@ -1,0 +1,29 @@
+
+##
+GET http://localhost:8080/list
+Content-Type: application/json
+
+
+###
+POST http://localhost:8080/v1/students/item
+Content-Type: application/json
+
+{
+  "name": "Mari",
+  "alex@gmail.com",
+  "date": "2005-07-25"
+}
+
+
+###
+DELETE http://localhost:8080/v1/students/item/1
+
+###
+PUT http://localhost:8080/v1/students/item
+Content-type: application/json
+
+{
+  "id": 2,
+  "name": "Tomas"
+}
+
